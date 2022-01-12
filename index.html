@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Угадайка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row align-items-center justify-content-center new-alert d-none" id="newAlert">
+            <div class="col col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <p id="alertText">Загадывай!!!</p>                        
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-success btn-start offset-md-2" id="alertBtn">Загадал!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center justify-content-center condition-card d-none" id="conditionField">
+            <div class="col col-md-5">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <p class="m-0">Введите значения для игры (от -999 до 999)</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row ml-4">
+                            <form id="conditionForm">
+                                <div class="form-group">
+                                  <label>Введите минимальное значение числа</label>
+                                  <input type="number" name="minNum" class="form-control" id="minNum" placeholder="0">                
+                                </div>
+                                <div class="form-group">
+                                  <label>Введите максимальное значение числа</label>
+                                  <input type="number" name="maxNum" class="form-control" id="maxNum" placeholder="100">
+                                </div>                            
+                                <button type="submit" class="btn btn-primary" id="conditionBtn">Играть</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center game-card d-none" id="gameField">
+            <div class="col col-md-5">
+                <div class="card text-center">
+                    <div class="card-header bg-info text-white">
+                        <p class="m-0">Попытка №<span id="orderNumberField">1</span></p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col">
+                                <h4 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h4>
+                            </div>
+                        </div>
+                        <div class="row btn-group mb-4">
+                            <button class="btn btn-info" id="btnLess"> << <br>меньше</button>
+                            <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+                            <button class="btn btn-info" id="btnOver">больше<br>>></button>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-success text-white">
+                        <button class="btn text-white btn-link" id="btnRetry">Заново</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center offset-md-5 start-game">
+            <div class="col col-md-4">
+                <button type="button" class="btn btn-success btn-start" id="btnStart">Начать игру!</button>
+            </div>
+        </div>    
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
